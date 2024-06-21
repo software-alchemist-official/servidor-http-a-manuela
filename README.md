@@ -1,0 +1,5 @@
+# Ejemplo servidor chafa HTTP con java vanilla
+
+Nada, así se recibían las peticiones hace miles de años cuando los dinosaurios gobernaban la tierra, un servidor web no es otra cosa que una aplicación escuchando en un puerto, la abstracción no deja de ser un socket. El código es en extremo sencillo, años después se crearon los Servlets, clases de java dedicadas que hacen todo eso en una línea, claro, esos servlets ocupan una tecnología de terceros, como puede ser Tomcat, dicho de otra forma: nos ocupamos de la lógica, y delegamos a Tomcat el levantamiento de nuestra aplicación (manejo del socket y escuchar en el socket, responder en el socket, etc.).
+
+Después siguió avanzando la cosa, cada día volviendo más fácil el trabajo, hasta el estándar de hoy: usar Spring MVC, Spring Boot, separar el frontend y el backend, microservicios, etcétera. Lo importante de recordar es que TODO es un socket programado a su manera, el chat era un socket, un servidor ftp es un socket, un canal cifrado con SSH es un socket, todo es un socket, la diferencia es el cómo lo programamos.
