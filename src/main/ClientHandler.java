@@ -28,9 +28,17 @@ public class ClientHandler implements Runnable {
             System.out.println("Petición recibida:");
             System.out.println(request);
 
-            //Respondo
-            String response = "HOLA MUNDO!";
+            // Construir la respuesta HTTP
+            String responseBody = "<html><body><h1>HOLA MUNDO!</h1></body></html>";
+            String responseHeaders = "HTTP/1.1 200 OK\r\n" +
+                    "Content-Type: text/html\r\n" +
+                    "Content-Length: " + responseBody.length() + "\r\n" +
+                    "Connection: close\r\n\r\n";
+            String response = responseHeaders + responseBody;
+
+            // Enviar la respuesta al cliente
             out.write(response);
+            out.flush();
 
             //Para testear probar en el navegador -> localhost:8080
 
